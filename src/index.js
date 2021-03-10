@@ -1,9 +1,10 @@
 
 exports.min = function min (array) {
-    if (arguments.length && array.length) {
+    if (array  && array.length) {
         let minimum = Infinity;
-        for (let i = 0; i < array.length; i++) {
-            minimum = (array[i] < minimum) ? array[i] : minimum;
+        for (let value of array) {
+            minimum = (value < minimum) ? value : minimum;
+            value +=1;
         }
         return minimum;
     } else {
@@ -12,10 +13,11 @@ exports.min = function min (array) {
 }
 
 exports.max = function max (array) {
-    if (arguments.length && array.length) {
+    if (array  && array.length) {
         let maximum = -Infinity;
-        for (let i = 0; i < array.length; i++) {
-            maximum = (array[i] > maximum) ? array[i] : maximum;
+        for (let value of array) {
+            maximum = (value > maximum) ? value : maximum;
+            value +=1;
         }
         return maximum;
     } else {
@@ -24,7 +26,7 @@ exports.max = function max (array) {
 }
 
 exports.avg = function avg (array) {
-    if (arguments.length && array.length) {
+    if (array  && array.length) {
         let average = 0;
         let summary = array.reduce(function (sum, current) {
             return sum + current;
